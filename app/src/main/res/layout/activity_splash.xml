@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SplashActivity"
+    android:orientation="vertical"
+    android:background="@color/colorPrimary">
+
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_above="@+id/text"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="30dp"
+        android:foregroundGravity="center|fill_horizontal"
+        android:src="@drawable/ic_baseline_view_carousel_24"></ImageView>
+
+    <TextView
+        android:id="@+id/text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:fontFamily="@font/courgette"
+        android:text="Recycler View"
+        android:textColor="#000000"
+        android:textSize="30dp"
+        android:textStyle="bold"></TextView>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="© Archana Mawale(JUNE 2020)"
+        android:textStyle="bold"
+        android:textColor="#ffffff"
+        android:layout_alignParentBottom="true"
+        android:textSize="16dp"
+        android:gravity="center_horizontal"></TextView>
+
+</RelativeLayout>
