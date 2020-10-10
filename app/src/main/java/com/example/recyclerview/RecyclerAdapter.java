@@ -18,9 +18,9 @@ import java.util.List;
 
 public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHolder> {
     private static final String TAG = "RecyclerAdapter";
-    List <String> tech_names;
-    public RecyclerAdapter(List<String> tech_names){
-        this.tech_names= tech_names;
+    List <ItemData> data;
+    public RecyclerAdapter(List<ItemData> data){
+        this.data= data;
     }
     @NonNull
     @Override
@@ -33,13 +33,14 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-holder.rowCountTextView.setText(String.valueOf(position));
-holder.textview.setText(tech_names.get(position));
+        holder.rowCountTextView.setText(String.valueOf(position));
+        holder.textview.setText(data.get(position).getTitle());
+        holder.imageView.setImageResource(data.get(position).getImageUrl());
     }
 
     @Override
     public int getItemCount() {
-        return tech_names.size();
+        return data.size();
     }
 
     class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
@@ -55,7 +56,7 @@ holder.textview.setText(tech_names.get(position));
 
         @Override
         public void onClick(View v) {
-            Toast.makeText(v.getContext(),tech_names.get(getAdapterPosition()),Toast.LENGTH_SHORT).show();
+            Toast.makeText(v.getContext(),data.get(getAdapterPosition()).getTitle(),Toast.LENGTH_SHORT).show();
         }
     }
 }
